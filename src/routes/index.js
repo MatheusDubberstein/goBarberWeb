@@ -1,14 +1,21 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import Home from '~/pages/Home';
+import { Switch } from 'react-router-dom';
+import Route from './Route';
 
 import SignIn from '~/pages/SignIn';
+import SingUp from '~/pages/SingUp';
+
+import Dashboard from '~/pages/Dashboard';
+import Profile from '~/pages/Profile';
 
 export default function Routes() {
   return (
     <Switch>
       <Route path="/" exact component={SignIn} />
-      <Route path="/home" component={Home} />
+      <Route path="/register" component={SingUp} />
+
+      <Route path="/dashboard" component={Dashboard} isPrivate />
+      <Route path="/profile" component={Profile} isPrivate />
     </Switch>
   );
 }
